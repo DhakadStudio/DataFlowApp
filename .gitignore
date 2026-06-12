@@ -1,19 +1,34 @@
+# IDE
+.idea/
+.vscode/
 *.iml
-.kotlin
-.gradle
-**/build/
-xcuserdata
-!src/**/build/
-local.properties
-.idea
+*.swp
+*~
+
+# OS
 .DS_Store
-captures
-.externalNativeBuild
-.cxx
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcodeproj/project.xcworkspace/
-!*.xcworkspace/contents.xcworkspacedata
-**/xcshareddata/WorkspaceSettings.xcsettings
+Thumbs.db
+
+# Build
+.gradle/
+**/build/
+.externalNativeBuild/
+.cxx/
+
+# Secrets (never commit)
+local.properties
+keystore.properties
+*.jks
+*.keystore
+
+# Kotlin
+.kotlin/
+
+# Gradle
+.gradle
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# Node (if used)
 node_modules/
