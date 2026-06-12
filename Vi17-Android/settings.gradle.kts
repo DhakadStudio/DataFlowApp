@@ -11,10 +11,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://repo.picovoice.ai/artifactory/public")
-        maven("https://jitpack.io")
+        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://maven.pkg.github.com/picovoice/picovoice-android") }
     }
 }
 
-rootProject.name = "Vi-17"
+rootProject.name = "Vi17-Assistant"
 include(":app")

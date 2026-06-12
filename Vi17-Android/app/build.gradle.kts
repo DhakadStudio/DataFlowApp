@@ -16,13 +16,10 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
-
-        // Build config for API keys (loaded from local.properties or CI/CD)
         buildConfigField("String", "PORCUPINE_ACCESS_KEY", "\"${project.findProperty("porcupine.access.key") ?: ""}\"")
     }
 
@@ -34,7 +31,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("debug") // Replace with release signing config
         }
         debug {
             isMinifyEnabled = false
@@ -90,12 +86,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.4")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.4")
 
-    // Hilt Dependency Injection
+    // Hilt
     implementation("com.google.dagger:hilt-android:2.50")
     kapt("com.google.dagger:hilt-compiler:2.50")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    implementation("androidx.hilt:hilt-work:1.2.0")
-    kapt("androidx.hilt:hilt-compiler:1.2.0")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
@@ -103,56 +97,29 @@ dependencies {
 
     // Room Database
     implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
 
-    // SQLCipher for encrypted database
+    // SQLCipher
     implementation("net.zetetic:android-database-sqlcipher:4.5.4")
 
-    // DataStore for preferences
+    // Preferences
     implementation("androidx.datastore:datastore-preferences:1.0.0")
-
-    // Security
-    implementation("androidx.security:security-crypto:1.1.0-alpha06")
-
-    // Serialization
-    implementation("com.google.code.gson:gson:2.10.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 
     // Networking
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation("com.squareup.retrofit2:retrofit:2.10.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.10.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    // MediaPipe LLM Inference
-    implementation("com.google.mediapipe:mediapipe-tasks-genai:0.10.0")
-
-    // ONNX Runtime for embeddings
-    implementation("com.microsoft.onnxruntime:onnxruntime-android:1.16.0")
-
-    // Picovoice Porcupine (Wake word)
-    implementation("ai.picovoice:porcupine-android:3.0.0")
-
-    // Audio processing
-    implementation("org.apache.commons:commons-math3:3.6.1")
+    // JSON
+    implementation("com.google.code.gson:gson:2.10.1")
 
     // Logging
     implementation("com.jakewharton.timber:timber:5.0.1")
 
     // Testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation("androidx.room:room-testing:2.6.1")
-
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.6.4")
-    androidTestImplementation("androidx.test:runner:1.5.2")
-    androidTestImplementation("androidx.test:rules:1.5.0")
-}
-
-// Hilt configuration
-kapt {
-    correctErrorTypes = true
 }

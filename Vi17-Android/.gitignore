@@ -1,4 +1,4 @@
-# Gradle files
+# Gradle
 .gradle/
 build/
 *.gradle.kts.bak
@@ -6,16 +6,11 @@ gradle-app.setting
 !gradle-wrapper.jar
 .gradletasknamecache
 
-# Local configuration file (sdk path, etc)
+# Local configuration
 local.properties
 keystore.properties
 
-# Log/OS files
-*.log
-.DS_Store
-Thumbs.db
-
-# Android Studio
+# IDE
 .idea/
 *.iml
 *.iws
@@ -25,21 +20,19 @@ Thumbs.db
 *.launch
 .settings/
 *.sublime-workspace
+.vscode/
 
-# Android Emulator
+# Android Studio
 .android/
 emulator.log
 
-# Keystore files
+# Keystore
 *.jks
 *.keystore
 *.p12
 *.pfx
-keystore-base64.txt
 
-# Build outputs
-app/build/
-*/build/
+# Build
 *.apk
 *.aab
 *.ap_
@@ -48,7 +41,7 @@ app/build/
 *.jar
 *.aar
 
-# Generated files
+# Generated
 gen/
 out/
 .externalNativeBuild/
@@ -57,24 +50,6 @@ out/
 # Lint
 lint-baseline.xml
 lint-results.xml
-lint-results.html
-
-# Test coverage
-coverage/
-*.ec
-*.exec
-
-# Kotlin
-*.kt.bak
-.kotlin/
-
-# IDE
-.vscode/
-.project
-.pydevproject
-.settings/
-*.swp
-*~
 
 # OS
 .DS_Store
@@ -85,39 +60,20 @@ coverage/
 .Trashes
 ehthumbs.db
 
-# Secrets (never commit)
-secrets.properties
-.env
-.env.local
+# Secrets
 service-account.json
 
-# Models (too large for git)
-app/src/main/assets/models/*.bin
-app/src/main/assets/models/*.onnx
-app/src/main/assets/models/*.pv
-
-# Temporary files
+# Temp
 *.tmp
 *.temp
 *.bak
 *.swp
 *~
 
-# Node modules (if using npm/yarn)
+# Node
 node_modules/
 npm-debug.log
-yarn-error.log
 
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-
-# Backup files
-*.backup
-*.orig

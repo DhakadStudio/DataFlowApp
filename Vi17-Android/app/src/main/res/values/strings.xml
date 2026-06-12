@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vi-17 Assistant</string>
+    <string name="app_description">Privacy-first AI Assistant</string>
+    <string name="accessibility_service_description">Vi-17 Accessibility Service for screen reading and context awareness</string>
+</resources>
