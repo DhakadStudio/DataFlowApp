@@ -32,10 +32,10 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Make gradlew executable
-        run: chmod +x Vi17-Android/gradle
+        run: chmod +x Vi17-Android/gradlew
 
       - name: Build Android APK
-        run: cd Vi17-Android && ./gradlew assembleDebug
+        run: cd Vi17-Android && ./gradlew assembleDebug --stacktrace
 
       - name: Find APK
         run: find . -name "*.apk"
